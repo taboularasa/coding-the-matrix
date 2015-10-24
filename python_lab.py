@@ -35,7 +35,7 @@ first_five_squares = { x**2 for x in {1,2,3,4,5} }
 
 
 ## 6: (Task 6) Powers-of-2 Set Comprehension
-first_five_pows_two = { ... for _ in {0,1,2,3,4} }
+first_five_pows_two = { 2**x for x in {0,1,2,3,4} }
 
 
 
@@ -43,8 +43,8 @@ first_five_pows_two = { ... for _ in {0,1,2,3,4} }
 # Assign three-element sets to X1 and Y1 so that
 # {x*y for x in X1 for y in Y1} evaluates to a nine-element set.
 
-X1 = { ..., ..., ... }
-Y1 = { ..., ..., ... }
+X1 = { 456, 654, 564 }
+Y1 = { 321, 123, 231 }
 
 
 
