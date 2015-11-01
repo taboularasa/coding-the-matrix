@@ -52,8 +52,8 @@ Y1 = { 321, 123, 231 }
 # Assign disjoint three-element sets to X1 and Y1 so that
 # {x*y for x in X1 for y in Y1} evaluates to a five-element set.
 
-X2 = { ..., ..., ... }
-Y2 = { ..., ..., ... }
+X2 = { 0, 1, 2 }
+Y2 = { 5, 10, 20 }
 
 
 
@@ -61,7 +61,7 @@ Y2 = { ..., ..., ... }
 S = {1, 2, 3, 4}
 T = {3, 4, 5, 6}
 # Replace { ... } with a one-line set comprehension that evaluates to the intersection of S and T
-S_intersect_T = { ... }
+S_intersect_T = { x for x in S for y in T if x == y }
 
 
 
@@ -70,13 +70,13 @@ list_of_numbers = [20, 10, 15, 75]
 # Replace ... with a one-line expression that evaluates to the average of list_of_numbers.
 # Your expression should refer to the variable list_of_numbers, and should work
 # for a list of any length greater than zero.
-list_average = ...
+list_average = sum(list_of_numbers)/len(list_of_numbers)
 
 
 
 ## 11: (Task 11) Cartesian-product comprehension
 # Replace ... with a double list comprehension over ['A','B','C'] and [1,2,3]
-cartesian_product = ...
+cartesian_product = [[x,y] for x in ['A', 'B', 'C'] for y in [1,2,3]]
 
 
 
@@ -84,40 +84,40 @@ cartesian_product = ...
 LofL = [[.25, .75, .1], [-1, 0], [4, 4, 4, 4]]
 # Replace ... with a one-line expression of the form sum([sum(...) ... ]) that
 # includes a comprehension and evaluates to the sum of all numbers in all the lists.
-LofL_sum = ...
+LofL_sum = LofL_sum = sum([sum(x) for x in LofL])
 
 
 
 ## 13: (Task 13) Three-element tuples summing to zero
 S = {-4, -2, 1, 2, 5, 0}
 # Replace [ ... ] with a one-line list comprehension in which S appears
-zero_sum_list = [ ... ]
+zero_sum_list = [(i,j,k) for i in S for j in S for k in S if i + j + k == 0]
 
 
 
 ## 14: (Task 14) Nontrivial three-element tuples summing to zero
 S = {-4, -2, 1, 2, 5, 0}
 # Replace [ ... ] with a one-line list comprehension in which S appears
-exclude_zero_list = [ ... ]
+exclude_zero_list = [(i,j,k) for i in S for j in S for k in S if i + j + k == 0 and (i, j, k) != (0,0,0)]
 
 
 
 ## 15: (Task 15) One nontrivial three-element tuple summing to zero
 S = {-4, -2, 1, 2, 5, 0}
 # Replace ... with a one-line expression that uses a list comprehension in which S appears
-first_of_tuples_list = ...
+first_of_tuples_list = [(i,j,k) for i in S for j in S for k in S if i + j + k == 0 and (i, j, k) != (0,0,0)][0]
 
 
 
 ## 16: (Task 16) List and set differ
 # Assign to example_L a list such that len(example_L) != len(list(set(example_L)))
-example_L = [...]
+example_L = [1,1,2]
 
 
 
 ## 17: (Task 17) Odd numbers
 # Replace {...} with a one-line set comprehension over a range of the form range(n)
-odd_num_list_range = {...}
+odd_num_list_range = {x for x in range(99) if x % 2 == 0 and x > 0}
 
 
 
@@ -125,7 +125,8 @@ odd_num_list_range = {...}
 # In the line below, replace ... with an expression that does not include a comprehension.
 # Instead, it should use zip and range.
 # Note: zip() does not return a list. It returns an 'iterator of tuples'
-range_and_zip = ...
+L = ['A','B','C','D','E']
+range_and_zip = list(zip(range(5), L))
 
 
 
