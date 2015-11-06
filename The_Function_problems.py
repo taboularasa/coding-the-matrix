@@ -39,7 +39,7 @@ def inv_dict(d):
     Example:
     >>> inv_dict({'goodbye':  'au revoir', 'thank you': 'merci'}) == {'merci':'thank you', 'au revoir':'goodbye'}
     '''
-    pass
+    return { v:k for k, v in d.items() }
 
 
 
