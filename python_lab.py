@@ -136,7 +136,7 @@ B = [1, 15, 20]
 # Replace [...] with a one-line comprehension that uses zip together with the variables A and B.
 # The comprehension should evaluate to a list whose ith element is the ith element of
 # A plus the ith element of B.
-list_sum_zip = [...]
+list_sum_zip = [sum(x) for x in zip(A, B)]
 
 
 
@@ -145,7 +145,7 @@ dlist = [{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'L
 k = 'James'
 # Replace [...] with a one-line comprehension that uses dlist and k
 # and that evaluates to ['Sean','Roger','Pierce']
-value_list = [...]
+value_list = [i[k] for i in dlist]
 
 
 
@@ -153,22 +153,22 @@ value_list = [...]
 dlist = [{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Richard'}]
 k = 'Bilbo'
 #Replace [...] with a one-line comprehension
-value_list_modified_1 = [...] # <-- Use the same expression here
+value_list_modified_1 = [i[k] if k in i else 'NOT PRESENT' for i in dlist] # <-- Use the same expression here
 k = 'Frodo'
-value_list_modified_2 = [...] # <-- as you do here
+value_list_modified_2 = [[i[k] if k in i else 'NOT PRESENT' for i in dlist] # <-- as you do here
 
 
 
 ## 22: (Task 22) A dictionary mapping integers to their squares
 # Replace {...} with a one-line dictionary comprehension
-square_dict = {...}
+square_dict = {i:i**2 for i in range(100)}
 
 
 
 ## 23: (Task 23) Making the identity function
 D = {'red','white','blue'}
 # Replace {...} with a one-line dictionary comprehension
-identity_dict = {...}
+identity_dict = {x for x in D}
 
 
 
