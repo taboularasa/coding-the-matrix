@@ -20,8 +20,7 @@ def myFilter(L, num):
       >>> myFilter([10,15,20,25],10)
       [15, 25]
     '''
-    pass
-
+    return [i for i in L if i % num != 0]
 
 
 ## 2: (Problem 2) Python Comprehensions: Lists of Lists
@@ -33,8 +32,7 @@ def my_lists(L):
     >>> my_lists([0,3])
     [[], [1, 2, 3]]
     '''
-    pass
-
+    return [[j + 1 for j in range(i)] for i in L]
 
 
 ## 3: (Problem 3) Python Comprehensions: Function Composition
@@ -56,8 +54,7 @@ def myFunctionComposition(f, g):
       >>> myFunctionComposition(a,b) == {'x':'twentyfour','y':'twentyfive'}
       True
     '''
-    pass
-
+    return {k: g[v] for k, v in f.items() }
 
 
 ## 4: (Problem 4) Summing numbers in a list
@@ -74,7 +71,10 @@ Be sure your procedure works for the empty list.
       >>> mySum([3,5,10])
       18
     '''
-    pass
+    result = 0
+    for i in L:
+        result += i
+    return result
 
 
 
@@ -92,7 +92,10 @@ Be sure your procedure works for the empty list.
       >>> myProduct([-3,2,4])
       -24
     '''
-    pass
+    if len(L) == 0: return 0
+    result = 1
+    for i in L: result *= i
+    return result
 
 
 
@@ -111,7 +114,12 @@ Hint: The value of the Python expression float('infinity') is infinity.
     >>> myMin([0,3,5,-2,-5])
     -5
     '''
-    pass
+    if len(L) == 0: return
+    result = L[0]
+    for i in L:
+        if i < result:
+            result = i
+    return result
 
 
 
@@ -129,8 +137,9 @@ Be sure your procedure works for the empty list.
     >>> myConcat(['what','is','up'])
     'whatisup'
     '''
-    pass
-
+    result = ''
+    for i in L: result += i
+    return result
 
 
 ## 8: (Problem 8) Union of Sets in a List
@@ -184,4 +193,3 @@ def transform(a, b, L):
 GF2_sum_1 = ... # answer with 0 or 1
 GF2_sum_2 = ...
 GF2_sum_3 = ...
-
