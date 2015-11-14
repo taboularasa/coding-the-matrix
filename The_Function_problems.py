@@ -64,11 +64,11 @@ comprehension_without_row = [[i+j for j in range(20)] for i in range(15)]
 
 
 ## 4: (Problem 4) Probability Exercise 1
-Pr_f_is_even = ...
-Pr_f_is_odd  = ...
+Pr_f_is_even = 0.3
+Pr_f_is_odd  = 0.7
 
 
 
 ## 5: (Problem 5) Probability Exercise 2
-Pr_g_is_1    = ...
-Pr_g_is_0or2 = ...
+Pr_g_is_1    = 0.4
+Pr_g_is_0or2 = 0.7
