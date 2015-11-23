@@ -165,10 +165,10 @@ Be sure your procedure works for the empty list.
 ## 9: (Problem 9) Complex Addition Practice
 # Each answer should be a Python expression whose value is a complex number.
 
-complex_addition_a = (5+3j)
+complex_addition_a = (5 + 3j)
 complex_addition_b = 1j
-complex_addition_c = (-1+0.001j)
-complex_addition_d = ...
+complex_addition_c = (-1 + 0.001j)
+complex_addition_d = (0.001 + 9j)
 
 
 
@@ -187,11 +187,10 @@ def transform(a, b, L):
     >>> transform(3,2,[1,2,3])
     [5, 8, 11]
     '''
-    pass
-
+    return [a * i + b for i in L]
 
 
 ## 11: (Problem 11) GF(2) Arithmetic
-GF2_sum_1 = ... # answer with 0 or 1
-GF2_sum_2 = ...
-GF2_sum_3 = ...
+GF2_sum_1 = 1
+GF2_sum_2 = 0
+GF2_sum_3 = 0
