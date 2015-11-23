@@ -30,8 +30,8 @@ p2_v_plus_two_u = [0, 1, 7]
 
 ## 3: (Problem 3) Vector Addition Practice 3
 # Write your answer using GF2's one instead of the number 1
-p3_vector_sum_1 = [...]
-p3_vector_sum_2 = [...]
+p3_vector_sum_1 = [one, 0, 0]
+p3_vector_sum_2 = [0, one, one]
 
 
 
@@ -42,8 +42,8 @@ p3_vector_sum_2 = [...]
 # The answer should be an empty set, written set(), if the given vector u cannot
 # be written as the sum of any subset of the vectors a, b, c, d, e, and f.
 
-u_0010010 = ...
-u_0100010 = ...
+u_0010010 = {'c', 'd', 'e'}
+u_0100010 = {'b', 'c', 'd', 'e'}
 
 
 
