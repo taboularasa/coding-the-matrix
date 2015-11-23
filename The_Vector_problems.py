@@ -12,19 +12,19 @@ from GF2 import one
 #Please express each answer as a list of numbers
 p1_v = [-1, 3]
 p1_u = [0, 4]
-p1_v_plus_u = [...]
-p1_v_minus_u = [...]
-p1_three_v_minus_two_u = [...]
+p1_v_plus_u = [-1, 7]
+p1_v_minus_u = [-1, -1]
+p1_three_v_minus_two_u = [-3, 1]
 
 
 
 ## 2: (Problem 2) Vector Addition Practice 2
 p2_u = [-1,  1, 1]
 p2_v = [ 2, -1, 5]
-p2_v_plus_u = [...]
-p2_v_minus_u = [...]
-p2_two_v_minus_u = [...]
-p2_v_plus_two_u = [...]
+p2_v_plus_u = [1, 0, 6]
+p2_v_minus_u = [3, -2, 4]
+p2_two_v_minus_u = [5, -3, 9]
+p2_v_plus_two_u = [0, 1, 7]
 
 
 
@@ -74,4 +74,3 @@ uv_a = ...
 uv_b = ...
 uv_c = ...
 uv_d = ...
-
