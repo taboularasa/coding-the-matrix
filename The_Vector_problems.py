@@ -50,8 +50,8 @@ u_0100010 = {'b', 'c', 'd', 'e'}
 ## 5: (Problem 5) GF2 Vector Addition B
 # Use the same format as the previous problem
 
-v_0010010 = ...
-v_0100010 = ...
+v_0010010 = set()
+v_0100010 = set()
 
 
 
