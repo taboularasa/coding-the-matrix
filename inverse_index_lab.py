@@ -13,7 +13,8 @@ def movie_review(name):
     Input: the name of a movie
     Output: a string (one of the review options), selected at random using randint
     """
-    return ...
+    reviews = ["See it!", "A gem!", "Ideological claptrap!"]
+    return reviews[randint(0, len(reviews) - 1)]
 
 
 
@@ -42,7 +43,7 @@ def orSearch(inverseIndex, query):
     Input: an inverse index, as created by makeInverseIndex, and a list of words to query
     Output: the set of document ids that contain _any_ of the specified words
     Feel free to use a loop instead of a comprehension.
-    
+
     >>> idx = makeInverseIndex(['Johann Sebastian Bach', 'Johannes Brahms', 'Johann Strauss the Younger', 'Johann Strauss the Elder', ' Johann Christian Bach',  'Carl Philipp Emanuel Bach'])
     >>> orSearch(idx, ['Bach','the'])
     {0, 2, 3, 4, 5}
@@ -67,4 +68,3 @@ def andSearch(inverseIndex, query):
     {0, 4}
     """
     pass
-
