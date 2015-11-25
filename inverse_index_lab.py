@@ -75,5 +75,5 @@ def andSearch(inverseIndex, query):
     """
     result = set()
     for key in inverseIndex.keys(): result.update(inverseIndex[key])
-    for word in query: result = result.intersection(inverseIndex[word])
+    for word in query: result.intersection_update(inverseIndex[word])
     return result
