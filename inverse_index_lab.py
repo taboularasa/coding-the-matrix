@@ -73,4 +73,7 @@ def andSearch(inverseIndex, query):
     >>> andSearch(idx, ['Johann', 'Bach'])
     {0, 4}
     """
-    pass
+    result = set()
+    for key in inverseIndex.keys(): result.update(inverseIndex[key])
+    for word in query: result = result.intersection(inverseIndex[word])
+    return result
