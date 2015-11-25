@@ -33,8 +33,12 @@ def makeInverseIndex(strlist):
     >>> makeInverseIndex(['hello world','hello','hello cat','hellolot of cats']) == {'hello': {0, 1, 2}, 'cat': {2}, 'of': {3}, 'world': {0}, 'cats': {3}, 'hellolot': {3}}
     True
     """
-    pass
-
+    result = {}
+    for idx, str in enumerate(strlist):
+        for word in str.split():
+            result.setdefault(word, set())
+            result[word].add(idx)
+    return result
 
 
 ## 3: (Task 3) Or Search
