@@ -38,6 +38,7 @@ def inv_dict(d):
        keys are the values of d and its values are the keys of d
     Example:
     >>> inv_dict({'goodbye':  'au revoir', 'thank you': 'merci'}) == {'merci':'thank you', 'au revoir':'goodbye'}
+    True
     '''
     return { v:k for k, v in d.items() }
 
