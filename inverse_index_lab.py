@@ -54,8 +54,10 @@ def orSearch(inverseIndex, query):
     >>> orSearch(idx, ['Johann', 'Carl'])
     {0, 2, 3, 4, 5}
     """
-    pass
-
+    result = set()
+    for word in query:
+        if word in inverseIndex: result.update(inverseIndex[word])
+    return result
 
 
 ## 4: (Task 4) And Search
