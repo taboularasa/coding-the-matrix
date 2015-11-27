@@ -191,8 +191,12 @@ def find_average_record(sen_set, voting_dict):
         >>> find_average_record({'a'}, d)
         [0.0, 1.0, 1.0]
     """
-
-    return ...
+    vote_products = {}
+    for sen in list(sen_set):
+        for i, vote in enumerate(voting_dict[sen]):
+            vote_products.setdefault(i, 0)
+            vote_products[i] += vote
+    return [v / len(sen_set) for v in vote_products.values()]
 
 average_Democrat_record = ... # give the vector as a list
 
