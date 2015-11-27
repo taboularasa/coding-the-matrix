@@ -58,7 +58,9 @@ def equal(u,v):
 
     """
     assert u.D == v.D
-    pass
+    for d in u.D:
+        if u[d] != v[d]: return False
+    return True
 
 def add(u,v):
     """
