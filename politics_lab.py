@@ -46,6 +46,16 @@ def create_voting_dict(strlist):
     return result
 
 
+def senators_in_party(party, strlist):
+    result = {}
+    for str in strlist:
+        row = str.split()
+        result[row[0]] = row[1]
+    return {k for k in result.keys() if result[k] == party}
+
+def democrats(strlist): return senators_in_party('D', strlist)
+def republicans(strlist): return senators_in_party('R', strlist)
+
 
 ## 2: (Task 2.12.2) Policy Compare
 def policy_compare(sen_a, sen_b, voting_dict):
@@ -125,9 +135,8 @@ def least_similar(sen, voting_dict):
 
 
 ## 5: (Task 2.12.5) Chafee, Santorum
-most_like_chafee    = ''
-least_like_santorum = ''
-
+most_like_chafee    = 'Jeffords'
+least_like_santorum = 'Grassley'
 
 
 ## 6: (Task 2.12.7) Most Average Democrat
@@ -145,9 +154,17 @@ def find_average_similarity(sen, sen_set, voting_dict):
         >>> vd == {'Klein':[1,1,1], 'Fox-Epstein':[1,-1,0], 'Ravella':[-1,0,0], 'Oyakawa':[-1,-1,-1], 'Loery':[0,1,1]}
         True
     """
-    return ...
+    comparisons = comparison_dict(sen, voting_dict)
+    filtered_comparisons = {k: comparisons[k] for k in sen_set}
+    return float(sum(filtered_comparisons.values())/len(filtered_comparisons))
 
-most_average_Democrat = ... # give the last name (or code that computes the last name)
+def most_average_Democrat(strlist):
+    results = {}
+    democrats = democrats(strlist)
+    voting_dict = create_voting_dict(strlist)
+    for democrat in democrats:
+        results[democrat] = find_average_similarity(sen, sen_set, voting_dict)
+    return max(results, key=results.get)
 
 
 
@@ -174,6 +191,7 @@ def find_average_record(sen_set, voting_dict):
         >>> find_average_record({'a'}, d)
         [0.0, 1.0, 1.0]
     """
+
     return ...
 
 average_Democrat_record = ... # give the vector as a list
