@@ -28,7 +28,7 @@ def setitem(v,k,val):
     >>> v['a']
     0
     """
-    pass
+    v.f[k] = val
 
 def equal(u,v):
     """
