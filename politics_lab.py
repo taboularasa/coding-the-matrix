@@ -69,6 +69,13 @@ def policy_compare(sen_a, sen_b, voting_dict):
 
 
 
+def comparison_dict(sen, voting_dict):
+    filtered_dict = {k:v for (k,v) in voting_dict.items() if sen not in k}
+    comparisons = {}
+    for other in filtered_dict:
+        comparisons[other] = policy_compare(sen, other, voting_dict)
+    return comparisons
+
 ## 3: (Task 2.12.3) Most Similar
 def most_similar(sen, voting_dict):
     """
@@ -89,10 +96,7 @@ def most_similar(sen, voting_dict):
 
     Note that you can (and are encouraged to) re-use your policy_compare procedure.
     """
-    filtered_dict = {k:v for (k,v) in voting_dict.items() if sen not in k}
-    comparisons = {}
-    for other in filtered_dict:
-        comparisons[other] = policy_compare(sen, other, voting_dict)
+    comparisons = comparison_dict(sen, voting_dict)
     return max(comparisons, key=comparisons.get)
 
 
@@ -114,7 +118,9 @@ def least_similar(sen, voting_dict):
         >>> least_similar('c', vd)
         'b'
     """
-    pass
+    comparisons = comparison_dict(sen, voting_dict)
+    return min(comparisons, key=comparisons.get)
+
 
 
 
