@@ -86,7 +86,7 @@ def add(u,v):
     True
     """
     assert u.D == v.D
-    pass
+    return Vec(u.D, {d: u[d] + v[d] for d in u.D})
 
 def dot(u,v):
     """
