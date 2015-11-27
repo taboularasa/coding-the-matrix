@@ -198,7 +198,12 @@ def find_average_record(sen_set, voting_dict):
             vote_products[i] += vote
     return [v / len(sen_set) for v in vote_products.values()]
 
-average_Democrat_record = ... # give the vector as a list
+f = open('voting_record_dump109.txt')
+strlist = list(f)
+average_Democrat_record = find_average_record(
+    democrats(strlist),
+    create_voting_dict(strlist)
+)
 
 
 
@@ -215,4 +220,9 @@ def bitter_rivals(voting_dict):
         >>> br == ('Fox-Epstein', 'Oyakawa') or br == ('Oyakawa', 'Fox-Epstein')
         True
     """
-    return (..., ...)
+    result = {}
+    for senator in voting_dict:
+        comparisons = comparison_dict(senator, voting_dict)
+        rival_sen = least_similar(senator, voting_dict)
+        result[(senator, rival_sen)] = comparisons[rival_sen]
+    return min(result, key=result.get)
