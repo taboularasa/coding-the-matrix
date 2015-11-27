@@ -89,8 +89,11 @@ def most_similar(sen, voting_dict):
 
     Note that you can (and are encouraged to) re-use your policy_compare procedure.
     """
-
-    return ""
+    filtered_dict = {k:v for (k,v) in voting_dict.items() if sen not in k}
+    comparisons = {}
+    for other in filtered_dict:
+        comparisons[other] = policy_compare(sen, other, voting_dict)
+    return max(comparisons, key=comparisons.get)
 
 
 
