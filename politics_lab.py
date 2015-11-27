@@ -12,8 +12,8 @@ coursera = 1
 def create_voting_dict(strlist):
     """
     Input: a list of strings.  Each string represents the voting record of a senator.
-           The string consists of 
-              - the senator's last name, 
+           The string consists of
+              - the senator's last name,
               - a letter indicating the senator's party,
               - a couple of letters indicating the senator's home state, and
               - a sequence of numbers (0's, 1's, and negative 1's) indicating the senator's
@@ -21,7 +21,7 @@ def create_voting_dict(strlist):
               all separated by spaces.
     Output: A dictionary that maps the last name of a senator
             to a list of numbers representing the senator's voting record.
-    Example: 
+    Example:
         >>> vd = create_voting_dict(['Kennedy D MA -1 -1 1 1', 'Snowe R ME 1 1 1 1'])
         >>> vd == {'Snowe': [1, 1, 1, 1], 'Kennedy': [-1, -1, 1, 1]}
         True
@@ -39,7 +39,11 @@ def create_voting_dict(strlist):
     The lists for each senator should preserve the order listed in voting data.
     In case you're feeling clever, this can be done in one line.
     """
-    pass
+    result = {}
+    for str in strlist:
+        row = str.split()
+        result[row[0]] = [int(e) for e in row[3:]]
+    return result
 
 
 
@@ -54,11 +58,11 @@ def policy_compare(sen_a, sen_b, voting_dict):
         >>> voting_dict = {'Fox-Epstein':[-1,-1,-1,1],'Ravella':[1,1,1,1]}
         >>> policy_compare('Fox-Epstein','Ravella', voting_dict)
         -2
-    
+
     The code should correct compute dot-product even if the numbers are not all in {0,1,-1}.
         >>> policy_compare('A', 'B', {'A':[100,10,1], 'B':[2,5,3]})
         253
-        
+
     You should definitely try to write this in one line.
     """
     pass
@@ -85,7 +89,7 @@ def most_similar(sen, voting_dict):
 
     Note that you can (and are encouraged to) re-use your policy_compare procedure.
     """
-    
+
     return ""
 
 
@@ -113,7 +117,7 @@ def least_similar(sen, voting_dict):
 
 ## 5: (Task 2.12.5) Chafee, Santorum
 most_like_chafee    = ''
-least_like_santorum = '' 
+least_like_santorum = ''
 
 
 
@@ -144,7 +148,7 @@ def find_average_record(sen_set, voting_dict):
     Input: a set of last names, a voting dictionary
     Output: a vector containing the average components of the voting records
             of the senators in the input set
-    Example: 
+    Example:
         >>> voting_dict = {'Klein': [-1,0,1], 'Fox-Epstein': [-1,-1,-1], 'Ravella': [0,0,1]}
         >>> senators = {'Fox-Epstein','Ravella'}
         >>> find_average_record(senators, voting_dict)
@@ -174,11 +178,10 @@ def bitter_rivals(voting_dict):
            their voting records
     Output: a tuple containing the two senators who most strongly
             disagree with one another.
-    Example: 
+    Example:
         >>> voting_dict = {'Klein':[-1,0,1], 'Fox-Epstein':[-1,-1,-1], 'Ravella':[0,0,1], 'Oyakawa':[1,1,1], 'Loery':[1,1,0]}
         >>> br = bitter_rivals(voting_dict)
         >>> br == ('Fox-Epstein', 'Oyakawa') or br == ('Oyakawa', 'Fox-Epstein')
         True
     """
     return (..., ...)
-
