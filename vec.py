@@ -117,7 +117,7 @@ def dot(u,v):
     12
     """
     assert u.D == v.D
-    pass
+    return sum([u[d] * v[d] for d in u.D])
 
 def scalar_mul(v, alpha):
     """
@@ -134,7 +134,7 @@ def scalar_mul(v, alpha):
     >>> u == Vec({'x','y','z','w'},{'x':1,'y':2,'z':3,'w':4})
     True
     """
-    pass
+    return Vec(v.D, {d: v[d] * alpha for d in v.D})
 
 def neg(v):
     """
@@ -149,7 +149,7 @@ def neg(v):
     True
 
     """
-    pass
+    return -1 * v 
 
 ###############################################################################################################################
 
