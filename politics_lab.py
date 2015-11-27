@@ -65,7 +65,7 @@ def policy_compare(sen_a, sen_b, voting_dict):
 
     You should definitely try to write this in one line.
     """
-    pass
+    return sum([voting_dict[sen_a][i] * voting_dict[sen_b][i] for i in range(len(voting_dict[sen_a]))])
 
 
 
