@@ -29,7 +29,7 @@ def vec_sum(veclist, D):
     >>> vec_sum([v1, v2, v3, v4], D) == Vec(D, {'b': 13, 'a': 11})
     True
     '''
-    pass
+    return sum(veclist, Vec(D,{}))
 
 def vec_select_sum(veclist, k, D):
     '''
