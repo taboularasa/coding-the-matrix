@@ -56,8 +56,7 @@ def scale_vecs(vecdict):
     >>> [v in [Vec({1,2,4},{2: 3.0}), Vec({1,2,4},{1: 0.2, 2: 0.4, 4: 1.6})] for v in result]
     [True, True]
     '''
-    pass
-
+    return [(1/k)*v for k,v in vecdict.items()]
 
 
 ## 3: (Problem 3) Constructing span of given vectors over GF(2)
