@@ -17,7 +17,7 @@ def vec_select(veclist, k):
     >>> vec_select([v1, v2, v3, v4], 'a') == [Vec(D,{'b': 1}), Vec(D,{'b': 2})]
     True
     '''
-    pass
+    return [v for v in veclist if v[k] == 0]
 
 def vec_sum(veclist, D):
     '''
@@ -103,4 +103,3 @@ is_a_vector_space_3 = ...
 # Answer with a boolean, please.
 is_a_vector_space_4a = ...
 is_a_vector_space_4b = ...
-
