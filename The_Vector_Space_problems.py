@@ -76,7 +76,16 @@ def GF2_span(D, S):
     >>> S == {Vec({0, 1},{1: one}), Vec({0, 1},{0: one})}
     True
     '''
-    pass
+    import itertools
+    keys_in_s = []
+    for v in S: keys_in_s += list(v.f.keys())
+    uniq_keys_in_s = list(set(keys_in_s))
+    result = set()
+    for i in range(len(uniq_keys_in_s) + 1):
+        for j in itertools.combinations(uniq_keys_in_s, i):
+            result.add(Vec(D, {k:one for k in j}))
+    return result
+
 
 
 
