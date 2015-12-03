@@ -91,7 +91,7 @@ def GF2_span(D, S):
 
 ## 4: (Problem 4) Is it a vector space 1
 # Answer with a boolean, please.
-is_a_vector_space_1 = True
+is_a_vector_space_1 = False
 
 
 
